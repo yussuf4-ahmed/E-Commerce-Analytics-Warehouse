@@ -41,7 +41,7 @@ An automated end-to-end data pipeline was designed to:
 
 ## Data Lineage
 
-*[Data Lineage Diagram – insert your image here]*
+![Data Modeling Diagram](docs/data-flow.png)
 
 ## Key Features
 
@@ -69,10 +69,8 @@ Built a centralized Snowflake warehouse that automated CLV calculations, replaci
 ## Project Structure
 ```
 ecommerce_analytics_warehouse/
-├── scripts/ # Extraction & Loading Layer
-│ ├── Extract_and_Load_to_Snowflake.py
-│ └── mock_api.py # Simulates the source API with messy data
-├── dbt_migration/ # Transformation Layer
+| ├── macros/
+│ │ ├── generate_schema_name.sql
 │ ├── models/
 │ │ ├── intermediate/ # Silver Layer: Cleaning & Macros
 │ │ └── marts/ # Gold Layer: Star Schema/Dimensions
