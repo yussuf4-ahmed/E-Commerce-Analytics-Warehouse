@@ -1,0 +1,26 @@
+name: 'analytics_transformation'
+version: '1.0.0'
+
+profile: 'analytics_transformation'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:        
+  - "target"
+  - "dbt_packages"
+
+models:
+  analytics_transformation:
+
+    intermediate:
+      +materialized: table
+      +schema: INT_SILVER
+
+    marts:
+      +materialized: view
+      +schema: MART_GOLD
