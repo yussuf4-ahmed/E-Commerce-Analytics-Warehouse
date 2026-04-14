@@ -67,3 +67,18 @@ An automated end-to-end data pipeline was designed to:
 Built a centralized Snowflake warehouse that automated CLV calculations, replacing a 4-hour manual weekly process. Reduced manual effort by 100% and improved accuracy by 25%.
 
 ## Project Structure
+```
+ecommerce_analytics_warehouse/
+├── scripts/ # Extraction & Loading Layer
+│ ├── Extract_and_Load_to_Snowflake.py
+│ └── mock_api.py # Simulates the source API with messy data
+├── dbt_migration/ # Transformation Layer
+│ ├── models/
+│ │ ├── intermediate/ # Silver Layer: Cleaning & Macros
+│ │ └── marts/ # Gold Layer: Star Schema/Dimensions
+│ ├── snapshots/ # SCD Type 2 Historical tracking (if needed)
+│ ├── dbt_project.yml
+│ └── profiles.yml
+├── init_snowflake_datawarehouse.sql # Snowflake setup script
+└── README.md # Project documentation
+```
