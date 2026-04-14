@@ -1,0 +1,18 @@
+# Credentials Management
+python-dotenv
+
+# Source API & Mocking
+fastapi
+uvicorn
+faker
+requests
+
+# Data Processing
+pandas
+pyarrow
+
+# Snowflake Connectivity
+snowflake-connector-python
+
+# Transformation
+dbt-snowflake
