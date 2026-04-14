@@ -29,7 +29,7 @@ An automated end-to-end data pipeline was designed to:
 
 ## Architecture
 
-*[Data Architecture Diagram – insert your image here]*
+![Data Modeling Diagram](docs/data-architecture.png)
 
 ## Tech Stack
 
