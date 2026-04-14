@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: ORDER_ID
+        tests:
+          - unique
+          - not_null
+      - name: CUSTOMER_ID
+        tests:
+          - not_null
+          # Note: Simplified relationship syntax for dbt 1.11
+          - relationships:
+              to: ref('dim_customers')
+              field: CUSTOMER_ID
+      - name: STATUS
+        tests:
+          - accepted_values:
+              values: ['COMPLETED', 'PENDING', 'CANCELLED', 'RETURNED', 'SHIPPED', 'UNKNOWN']
+      - name: TOTAL_REVENUE
+        tests:
+          - not_null
