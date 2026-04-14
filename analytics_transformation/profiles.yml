@@ -1,0 +1,13 @@
+analytics_transformation:
+  outputs:
+    dev:
+      type: snowflake
+      account: ACCOUNT_IDENTIFIER
+      user: USERNAME
+      password: PASSWORD
+      role: ACCOUNTADMIN  # Or a specific developer role if you created one
+      database: ECOMMERCE_DW
+      warehouse: ECOMMERCE_WH
+      schema: RAW_BRONZE
+      threads: 4
+  target: dev
