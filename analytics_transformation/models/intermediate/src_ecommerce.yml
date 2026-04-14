@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_bronze
+    database: ECOMMERCE_DW
+    schema: RAW_BRONZE # This is your existing Python landing zone
+    tables: 
+      - name: STG_CUSTOMERS
+      - name: STG_ORDERS
+      - name: STG_ORDER_ITEMS
+      - name: STG_PRODUCTS
