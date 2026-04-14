@@ -1,0 +1,14 @@
+with raw_cust as (
+      SELECT * FROM {{ source('raw_bronze', 'STG_CUSTOMERS') }}
+)
+SELECT
+      CUSTOMER_ID,
+      INITCAP(NAME) AS CUSTOMER_NAME,
+      LOWER(EMAIL) AS CUSTOMER_EMAIL,
+      CASE 
+      WHEN UPPER(COUNTRY) IN ('USA', 'UNITED STATES', 'U.S.A', 'US') THEN 'USA'
+      WHEN UPPER(COUNTRY) = 'KENYA' THEN 'Kenya'
+      ELSE INITCAP(COUNTRY)
+      END AS COUNTRY,
+      CAST(CREATED_AT AS DATE) AS SIGNUP_DATE
+FROM raw_cust
