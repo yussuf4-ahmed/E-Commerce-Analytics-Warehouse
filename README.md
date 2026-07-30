@@ -1,5 +1,9 @@
 # E-Commerce Analytics Warehouse
 
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)](https://www.getdbt.com/)
+[![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)](https://www.snowflake.com/)
+
 ## Overview
 
 This project demonstrates an end-to-end modern data pipeline that automates Customer Lifetime Value (CLV) calculations. The pipeline extracts data from a custom API, loads it into Snowflake, transforms it using dbt with a Medallion architecture, and delivers insights through Power BI dashboards.
